@@ -1,0 +1,248 @@
+/* ===== style.css: gaya seluruh situs (terang dan gelap otomatis) ===== */
+
+/* ---- Variabel warna (mode terang) ---- */
+:root { --bg:#F3F5F9; --surface:#fff; --ink:#14182B; --muted:#5B6280; --line:#DDE1EC; --accent:#2F5BFF; --accent-ink:#fff; --r:14px; }
+/* ---- Variabel warna (mode gelap, mengikuti pengaturan perangkat) ---- */
+@media (prefers-color-scheme:dark) { :root { --bg:#0F1220; --surface:#181C30; --ink:#EEF0F8; --muted:#9AA1BD; --line:#2A2F4A; --accent:#6C8CFF; --accent-ink:#0F1220; } }
+
+/* ---- Dasar ---- */
+/* Hitung lebar elemen termasuk padding dan border */
+* { box-sizing:border-box; }
+/* Latar, warna teks, dan font isi */
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 'Public Sans',system-ui,sans-serif; }
+/* Judul dan logo memakai font Bricolage */
+h1, h2, h3, .logo { font-family:'Bricolage Grotesque',system-ui,sans-serif; line-height:1.15; margin:0; }
+/* Tautan mewarisi warna sekitar tanpa garis bawah */
+a { color:inherit; text-decoration:none; }
+/* Cincin fokus yang jelas untuk pengguna keyboard */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
+/* Pembungkus konten di tengah halaman */
+.wrap { max-width:1120px; margin:0 auto; padding:0 20px; }
+/* Teks yang hanya terbaca oleh screen reader */
+.sr { position:absolute; left:-9999px; }
+
+/* ---- Header dan navigasi ---- */
+/* Header menempel di atas saat scroll */
+.site-header { position:sticky; top:0; z-index:10; background:var(--surface); border-bottom:1px solid var(--line); }
+/* Baris isi header */
+.bar { display:flex; align-items:center; justify-content:space-between; height:64px; }
+/* Logo */
+.logo { font-size:1.5rem; font-weight:800; }
+/* Titik ".in" pada logo berwarna aksen */
+.logo span { color:var(--accent); }
+/* Daftar menu */
+.nav { display:flex; gap:22px; font-weight:500; }
+/* Menu berubah warna saat disorot */
+.nav a:hover { color:var(--accent); }
+/* Lencana jumlah keranjang */
+.badge { background:var(--accent); color:var(--accent-ink); border-radius:99px; padding:1px 8px; font-size:.8rem; }
+
+/* ---- Hero dan pencarian ---- */
+/* Area hero di beranda */
+.hero { padding:64px 0 48px; background:var(--surface); border-bottom:1px solid var(--line); }
+/* Judul hero */
+.hero h1 { font-size:clamp(2rem,5vw,3.4rem); font-weight:800; max-width:18ch; letter-spacing:-.02em; }
+/* Form pencarian */
+.search { display:flex; gap:8px; margin-top:28px; max-width:560px; }
+/* Kolom ketik pencarian */
+.search input { flex:1; padding:14px 16px; border:1px solid var(--line); border-radius:var(--r); background:var(--bg); color:var(--ink); font:inherit; }
+/* Tombol utama berwarna aksen (juga chip aktif) */
+.search button, .chip.on { background:var(--accent); color:var(--accent-ink); }
+/* Bentuk tombol cari */
+.search button { border:0; border-radius:var(--r); padding:0 24px; font:600 1rem 'Public Sans'; cursor:pointer; }
+
+/* ---- Filter merek dan urutan ---- */
+/* Baris filter */
+.filters { display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:space-between; padding:32px 0 20px; }
+/* Kumpulan chip merek */
+.chips { display:flex; flex-wrap:wrap; gap:8px; }
+/* Satu chip merek */
+.chip { padding:7px 16px; border:1px solid var(--line); border-radius:99px; background:var(--surface); font-weight:500; font-size:.95rem; }
+/* Batas chip aktif */
+.chip.on { border-color:var(--accent); }
+/* Label dropdown urutan */
+.sort { display:flex; gap:8px; align-items:center; color:var(--muted); font-size:.95rem; }
+/* Dropdown urutan */
+.sort select, .qty select { padding:8px 10px; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--ink); font:inherit; }
+
+/* ---- Grid dan kartu HP ---- */
+/* Grid responsif: kolom menyesuaikan lebar layar */
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:20px; }
+/* Kartu HP */
+.card { display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; transition:border-color .15s; }
+/* Kartu disorot */
+.card:hover { border-color:var(--accent); }
+/* Area gambar kartu dengan latar tipis berwarna HP */
+.art { background:color-mix(in srgb,var(--tint) 14%,var(--surface)); padding:18px; }
+/* Ilustrasi SVG dan foto sama-sama setinggi 150px */
+.art svg, .art img { display:block; width:100%; height:150px; }
+/* Foto dipotong tanpa terdistorsi */
+.art img { object-fit:contain; }
+/* Isi teks kartu */
+.info { padding:16px 18px 18px; display:flex; flex-direction:column; gap:6px; flex:1; }
+/* Nama HP di kartu */
+.info h3 { font-size:1.2rem; }
+/* Teks kecil abu-abu (merek, seri) */
+.meta { color:var(--muted); font-size:.85rem; }
+/* Titik-titik pilihan warna */
+.dots { display:flex; gap:6px; margin-top:2px; }
+/* Satu titik warna */
+.dots i { width:14px; height:14px; border-radius:50%; border:1px solid var(--line); }
+/* Baris harga dan rating */
+.row { display:flex; justify-content:space-between; align-items:center; margin-top:8px; }
+/* Rating */
+.rate { color:var(--muted); font-size:.9rem; }
+/* Pesan kosong dan tautan kembali */
+.empty { padding:40px 0; color:var(--muted); }
+.empty a, .back { color:var(--accent); font-weight:600; }
+
+/* ---- Halaman detail HP ---- */
+/* Pembungkus halaman detail */
+.detail { padding-top:28px; padding-bottom:56px; }
+/* Dua kolom: gambar dan info */
+.d-grid { display:grid; grid-template-columns:minmax(0,5fr) minmax(0,6fr); gap:40px; margin-top:20px; }
+/* Kotak gambar besar */
+.d-art { background:color-mix(in srgb,var(--tint) 14%,var(--surface)); border-radius:var(--r); padding:40px; align-self:start; }
+/* Foto dan ilustrasi besar */
+.d-art svg { display:block; width:100%; height:auto; }
+.d-art img { display:block; width:100%; max-height:460px; object-fit:contain; }
+/* Atribut hidden harus menang atas display bawaan */
+[hidden] { display:none !important; }
+/* Judul HP */
+.detail h1 { font-size:clamp(1.8rem,4vw,2.6rem); margin:6px 0 10px; }
+/* Kalimat ringkasan */
+.lead { color:var(--muted); max-width:56ch; }
+/* Harga besar */
+.price { font:800 1.9rem 'Bricolage Grotesque'; margin:16px 0 0; color:var(--accent); }
+/* Subjudul seksi */
+.detail h2, .page h2 { font-size:1.25rem; margin:24px 0 10px; }
+/* Tabel spesifikasi */
+.specs { width:100%; border-collapse:collapse; background:var(--surface); border:1px solid var(--line); }
+/* Sel tabel */
+.specs th, .specs td { padding:11px 16px; text-align:left; border-bottom:1px solid var(--line); }
+/* Kolom label spesifikasi */
+.specs th { width:38%; color:var(--muted); font-weight:500; }
+/* Baris terakhir tanpa garis bawah */
+.specs tr:last-child > * { border-bottom:0; }
+
+/* ---- Pilihan warna ---- */
+/* Kotak pilihan warna tanpa border bawaan */
+.colors { border:0; padding:0; margin:22px 0 0; }
+/* Judul pilihan warna */
+.colors legend { padding:0; margin-bottom:10px; color:var(--muted); }
+.colors b { color:var(--ink); }
+/* Satu pilihan warna */
+.sw { display:inline-block; margin-right:10px; cursor:pointer; }
+/* Sembunyikan radio asli (tetap bisa diakses keyboard) */
+.sw input { position:absolute; opacity:0; }
+/* Lingkaran warna */
+.sw span { display:block; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); box-shadow:0 0 0 3px var(--surface); }
+/* Cincin pada warna terpilih */
+.sw input:checked + span { box-shadow:0 0 0 3px var(--surface), 0 0 0 5px var(--accent); }
+/* Cincin fokus keyboard */
+.sw input:focus-visible + span { outline:3px solid var(--accent); outline-offset:5px; }
+
+/* ---- Tombol ---- */
+/* Baris tombol */
+.btns { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
+/* Tombol utama */
+.btn { display:inline-block; background:var(--accent); color:var(--accent-ink); border:2px solid var(--accent); border-radius:var(--r); padding:12px 22px; font:600 1rem 'Public Sans'; cursor:pointer; text-align:center; }
+/* Tombol sekunder (garis tepi) */
+.btn.ghost { background:transparent; color:var(--accent); }
+/* Tombol berbentuk tautan */
+.link { background:none; border:0; color:var(--accent); font:inherit; cursor:pointer; text-decoration:underline; }
+
+/* ---- Keranjang dan checkout ---- */
+/* Halaman isi biasa */
+.page { padding-top:32px; padding-bottom:56px; }
+.page h1 { font-size:2rem; margin-bottom:18px; }
+/* Halaman sempit (pembayaran) */
+.narrow { max-width:680px; }
+/* Dua kolom: daftar dan ringkasan */
+.two { display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:32px; align-items:start; }
+/* Satu baris item keranjang */
+.line { display:flex; gap:16px; align-items:center; padding:16px 0; border-bottom:1px solid var(--line); }
+.grow { flex:1; }
+/* Gambar kecil item keranjang */
+.thumb { width:72px; border-radius:10px; padding:6px; background:color-mix(in srgb,var(--tint) 14%,var(--surface)); }
+.thumb svg, .thumb img { display:block; width:100%; height:auto; }
+/* Kotak ringkasan biaya */
+.sum { background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:20px; }
+.sum h2 { margin-top:0 !important; }
+.sum p { display:flex; justify-content:space-between; gap:12px; margin:8px 0; }
+/* Baris total */
+.sum .tot { border-top:1px solid var(--line); padding-top:12px; font-size:1.15rem; }
+.sum .btn { display:block; width:100%; margin:14px 0 8px; }
+.sum small, .paybox small { color:var(--muted); display:block; }
+.sum.flat { margin-top:0; }
+/* Form data penerima */
+.form label { display:block; margin-bottom:14px; font-weight:500; }
+.form input:not([type=radio]), .form textarea { display:block; width:100%; margin-top:6px; padding:12px; border:1px solid var(--line); border-radius:10px; background:var(--surface); color:var(--ink); font:inherit; }
+/* Pilihan metode bayar */
+.form .opt { display:flex; gap:10px; align-items:center; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:var(--surface); cursor:pointer; }
+/* Kotak pesan error */
+.alert { background:color-mix(in srgb,#E8365D 12%,var(--surface)); border:1px solid #E8365D; border-radius:10px; padding:12px 16px; margin-bottom:18px; }
+
+/* ---- Halaman pembayaran ---- */
+/* Kotak instruksi bayar */
+.paybox { background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:22px; margin-top:16px; }
+/* Nomor Virtual Account */
+.va { font:800 1.8rem 'Bricolage Grotesque'; letter-spacing:.04em; margin:4px 0 10px !important; }
+/* Kotak QR contoh */
+.qr { width:180px; height:180px; margin:12px 0; border-radius:8px; background:conic-gradient(var(--ink) 25% , var(--surface) 0 50%, var(--ink) 0 75%, var(--surface) 0) 0 0/36px 36px; border:8px solid var(--surface); outline:1px solid var(--line); }
+
+/* ---- Halaman dan animasi sukses ---- */
+/* Kartu sukses */
+.success { position:relative; text-align:center; padding:36px 20px 28px; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); }
+.success h1 { margin:14px 0 8px !important; }
+.success .lead { margin:0 auto 18px; }
+/* Ikon centang */
+.check { width:96px; height:96px; display:block; margin:0 auto; }
+/* Lingkaran digambar perlahan lalu sedikit membesar */
+.ring { fill:color-mix(in srgb,#12B886 14%,var(--surface)); stroke:#12B886; stroke-width:2.5; stroke-dasharray:151; stroke-dashoffset:151; transform-origin:center; animation:draw .6s ease-out forwards, pop .5s .55s ease-out; }
+/* Tanda centang digambar setelah lingkaran */
+.tick { fill:none; stroke:#12B886; stroke-width:4; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:40; stroke-dashoffset:40; animation:draw .4s .5s ease-out forwards; }
+/* Animasi menggambar garis */
+@keyframes draw { to { stroke-dashoffset:0; } }
+/* Animasi membesar sekilas */
+@keyframes pop { 50% { transform:scale(1.08); } }
+/* Titik pusat percikan warna */
+.burst { position:absolute; left:50%; top:84px; width:0; height:0; }
+/* Satu percikan */
+.burst span { position:absolute; left:-5px; top:-5px; width:10px; height:10px; border-radius:50%; background:var(--c); opacity:0; animation:fly .9s .7s ease-out; }
+/* Percikan terbang keluar dan memudar */
+@keyframes fly { 0% { opacity:1; transform:rotate(var(--a)) translateY(-30px); } 100% { opacity:0; transform:rotate(var(--a)) translateY(-95px) scale(.4); } }
+/* Daftar ringkas nomor pesanan, metode, waktu */
+.meta-list { display:flex; flex-wrap:wrap; justify-content:center; gap:12px 32px; margin:0 0 22px; }
+.meta-list div { min-width:120px; }
+.meta-list dt { color:var(--muted); font-size:.85rem; }
+.meta-list dd { margin:0; font-weight:600; }
+.btns.c { justify-content:center; margin-top:0; }
+/* Layar loading saat memproses pembayaran */
+.proc { position:fixed; inset:0; z-index:50; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; background:color-mix(in srgb,var(--bg) 88%,transparent); backdrop-filter:blur(4px); }
+/* Spinner berputar */
+.spin { width:48px; height:48px; border-radius:50%; border:4px solid var(--line); border-top-color:var(--accent); animation:spin .8s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+
+/* ---- Footer ---- */
+.site-footer { border-top:1px solid var(--line); background:var(--surface); padding:32px 0; color:var(--muted); font-size:.9rem; }
+.site-footer strong { color:var(--ink); font-family:'Bricolage Grotesque'; }
+.site-footer p { max-width:60ch; margin:6px 0; }
+
+/* ---- Responsif: layar kecil ---- */
+@media (max-width:760px) {
+  /* Detail dan checkout menjadi satu kolom */
+  .d-grid, .two { grid-template-columns:1fr; }
+  /* Baris keranjang boleh turun baris */
+  .line { flex-wrap:wrap; }
+}
+/* ---- Aksesibilitas: hormati preferensi kurangi gerakan ---- */
+@media (prefers-reduced-motion:reduce) {
+  /* Matikan transisi dan animasi, tampilkan hasil akhir */
+  * { transition:none !important; }
+  .ring, .tick { animation:none; stroke-dashoffset:0; }
+  .burst { display:none; }
+  .spin { animation-duration:2s; }
+}
+/* ---- Cetak bukti pembayaran ---- */
+@media print { .site-header, .site-footer, .btns { display:none !important; } .success { border:0; } }

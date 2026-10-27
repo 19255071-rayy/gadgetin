@@ -1,0 +1,112 @@
+PANDUAN FOTO HP
+================
+
+Taruh foto di folder assets/img/phones/<folder-hp>/ dengan nama file <nama-warna>.<ekstensi>.
+Ekstensi yang didukung: webp, jpg, jpeg, png.
+Foto 'utama.<ekstensi>' (opsional) dipakai bila foto warna tertentu belum ada.
+Jika tidak ada foto sama sekali, situs menampilkan ilustrasi HP berwarna.
+Saran ukuran: 800x800 px, latar putih/transparan, format webp atau jpg.
+Buka cek-foto.php di browser untuk melihat foto mana yang sudah terbaca.
+
+Samsung Galaxy S25 Ultra  ->  assets/img/phones/samsung-galaxy-s25-ultra/
+    titanium-silverblue.webp   (warna Titanium Silverblue)
+    titanium-black.webp   (warna Titanium Black)
+    titanium-gray.webp   (warna Titanium Gray)
+
+Samsung Galaxy A56 5G  ->  assets/img/phones/samsung-galaxy-a56-5g/
+    awesome-graphite.webp   (warna Awesome Graphite)
+    awesome-olive.webp   (warna Awesome Olive)
+    awesome-lightgray.webp   (warna Awesome Lightgray)
+
+Samsung Galaxy Z Flip6  ->  assets/img/phones/samsung-galaxy-z-flip6/
+    mint.webp   (warna Mint)
+    silver-shadow.webp   (warna Silver Shadow)
+    yellow.webp   (warna Yellow)
+
+Xiaomi 15  ->  assets/img/phones/xiaomi-15/
+    hitam.webp   (warna Hitam)
+    putih.webp   (warna Putih)
+    hijau.webp   (warna Hijau)
+
+Xiaomi Redmi Note 14 Pro+ 5G  ->  assets/img/phones/xiaomi-redmi-note-14-pro-5g/
+    midnight-black.webp   (warna Midnight Black)
+    coral-purple.webp   (warna Coral Purple)
+    aurora-green.webp   (warna Aurora Green)
+
+Xiaomi Redmi 14C  ->  assets/img/phones/xiaomi-redmi-14c/
+    midnight-black.webp   (warna Midnight Black)
+    sage-green.webp   (warna Sage Green)
+    dreamy-purple.webp   (warna Dreamy Purple)
+
+iPhone 16 Pro Max  ->  assets/img/phones/iphone-16-pro-max/
+    desert-titanium.webp   (warna Desert Titanium)
+    natural-titanium.webp   (warna Natural Titanium)
+    black-titanium.webp   (warna Black Titanium)
+    white-titanium.webp   (warna White Titanium)
+
+iPhone 16  ->  assets/img/phones/iphone-16/
+    ultramarine.webp   (warna Ultramarine)
+    teal.webp   (warna Teal)
+    pink.webp   (warna Pink)
+    black.webp   (warna Black)
+
+iPhone 16e  ->  assets/img/phones/iphone-16e/
+    black.webp   (warna Black)
+    white.webp   (warna White)
+
+Oppo Find X8  ->  assets/img/phones/oppo-find-x8/
+    space-black.webp   (warna Space Black)
+    star-grey.webp   (warna Star Grey)
+    sunset-blue.webp   (warna Sunset Blue)
+
+Oppo Reno13 5G  ->  assets/img/phones/oppo-reno13-5g/
+    luminous-blue.webp   (warna Luminous Blue)
+    ivory-white.webp   (warna Ivory White)
+    midnight-black.webp   (warna Midnight Black)
+
+Oppo A5 Pro  ->  assets/img/phones/oppo-a5-pro/
+    mocha-brown.webp   (warna Mocha Brown)
+    silk-gold.webp   (warna Silk Gold)
+
+Vivo X200  ->  assets/img/phones/vivo-x200/
+    cosmos-black.webp   (warna Cosmos Black)
+    titanium-gray.webp   (warna Titanium Gray)
+    natural-green.webp   (warna Natural Green)
+
+Vivo V50  ->  assets/img/phones/vivo-v50/
+    rose-red.webp   (warna Rose Red)
+    titanium-gray.webp   (warna Titanium Gray)
+    starry-blue.webp   (warna Starry Blue)
+
+Vivo Y29  ->  assets/img/phones/vivo-y29/
+    glacier-blue.webp   (warna Glacier Blue)
+    diamond-black.webp   (warna Diamond Black)
+
+Realme GT 7 Pro  ->  assets/img/phones/realme-gt-7-pro/
+    mars-orange.webp   (warna Mars Orange)
+    galaxy-grey.webp   (warna Galaxy Grey)
+
+Realme 14 Pro+ 5G  ->  assets/img/phones/realme-14-pro-5g/
+    suede-grey.webp   (warna Suede Grey)
+    pearl-white.webp   (warna Pearl White)
+    bikaner-red.webp   (warna Bikaner Red)
+
+Realme C75  ->  assets/img/phones/realme-c75/
+    lightning-gold.webp   (warna Lightning Gold)
+    midnight-navy.webp   (warna Midnight Navy)
+
+Google Pixel 9 Pro XL  ->  assets/img/phones/google-pixel-9-pro-xl/
+    obsidian.webp   (warna Obsidian)
+    porcelain.webp   (warna Porcelain)
+    hazel.webp   (warna Hazel)
+
+Google Pixel 9  ->  assets/img/phones/google-pixel-9/
+    obsidian.webp   (warna Obsidian)
+    peony.webp   (warna Peony)
+    wintergreen.webp   (warna Wintergreen)
+
+Google Pixel 9a  ->  assets/img/phones/google-pixel-9a/
+    obsidian.webp   (warna Obsidian)
+    porcelain.webp   (warna Porcelain)
+    iris.webp   (warna Iris)
+
